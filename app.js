@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
     res.send("Route is working! YaY!");
 });
 
-app.use("/", fileRoute)
+app.use("/",express.static("./files/"), fileRoute)
 
 
 module.exports = app;

@@ -55,4 +55,14 @@ router.post("/upload_file",upload.single("my_file"),async(req,res)=>{
     }
 });
 
+router.get("/get_upload_file",async(req,res)=>{
+    try {
+        const getFile = await File.find();
+
+        res.status(201).json({status:201,getFile})
+    } catch (error) {
+        res.status(401).json({status:401,error})
+    }
+});
+
 module.exports = router;
